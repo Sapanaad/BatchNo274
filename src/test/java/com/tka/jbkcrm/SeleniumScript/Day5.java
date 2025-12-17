@@ -26,7 +26,9 @@ public static void main(String[] args) {
 //		 if(isDisplay)
 //		 {
 //		 System.out.println("Test case Pass");
-//		 } else {
+//		 }
+//		else 
+//		{
 //	     System.out.println("Test case Failed");
 //	check search text box enable to enter value or not
 //	     WebElement txtsearch = driver.findElement(By.name("search[keywords]"));
@@ -35,10 +37,32 @@ public static void main(String[] args) {
 //	     if(isEnable)
 //	     {
 //	     System.out.println("Test case!! is Pass and you are able to enter a value in a search textbox");
-//	     } else {
+//	     }
+//		else 
+//		{
 //	     System.out.println("Test case Failed!! and you are not able to enter a value in a search textbox");
-	
+	// check advance login link is clickable or not and if enabled then click on a link
+		WebElement linkAdvanceSearch = driver.findElement(By.partialLinkText("Advanced Search"));
+	     boolean isEnable=linkAdvanceSearch.isEnabled();
+	     boolean isclickable=false;
+	     if(isEnable)
+	     {
+	    	 isclickable=true;
+          System.out.println("Advance link is enable for click!!");
+          linkAdvanceSearch.click();
+	     }
+	     else
+	     {
+	    	 System.out.println("Advance link is not enable for click!!"); 
+	     }
+     if(isclickable)
+     {
+    	 System.out.println("Test case Pass");	
+	     } 
+     else 
+	     {
+	    System.out.println("Test case Failed");	
 }
 }
-
+}
 
